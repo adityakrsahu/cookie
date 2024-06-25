@@ -13,8 +13,8 @@ urlpatterns = [
     
     
     
-    path("",home,name='home'),
-    path("",about,name='home'),
-    path("",conteact,name='home'),
-    path("",login,name='home'),
+#     path("",home,name='home'),
+#     path("",about,name='home'),
+#     path("",conteact,name='home'),
+#     path("",login,name='home'),
 ]

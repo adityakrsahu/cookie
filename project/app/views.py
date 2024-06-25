@@ -1,6 +1,8 @@
 
 from django.shortcuts import render
 from datetime import *
+from .models import *
+from django.http import HttpResponse
 # Create your views here.
 def set(request):
     data = render(request,'app/set.html')
@@ -52,3 +54,23 @@ def login(request):
     if email_id == emailid and password ==pwd:
         name = request.COOKIES['fname']
         return render(request,'dashboard.html',{'data':name})
+    
+    def register(request):
+    # return render(request, 'app/register.html')
+
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        contact = request.POST.get('contact')
+        password = request.POST.get('password')
+    
+        print(name )
+        print(email)
+        print(contact)
+        print(password)
+
+        Student.objects.create(
+                            Name=name,
+                            Email=email,
+                            Contact=contact,
+                            Password=password)
+        return HttpResponse("sub")
